@@ -61,8 +61,8 @@ const Navbar = () => {
               transition={{ duration: 3, repeat: Infinity }}
             />
             <span className="relative block text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 px-2 py-1">
-              Anshu
-            </span>
+              Anshu Dubey
+            </span> 
           </Link>
           
           {/* Desktop Navigation */}

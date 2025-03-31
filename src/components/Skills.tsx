@@ -39,7 +39,7 @@ const Skills = () => {
   ]
 
   return (
-    <section className="py-24 relative overflow-hidden" id="skills">
+    <section className="py-16 md:py-24 relative overflow-hidden" id="skills">
       {/* Background elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-purple-50 z-0"></div>
       <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-gradient-to-br from-indigo-200 to-purple-200 rounded-full filter blur-3xl opacity-30 z-0"></div>
@@ -83,31 +83,31 @@ const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">
             Technical Expertise
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+          <p className="text-gray-600 max-w-2xl mx-auto text-base md:text-lg px-2">
             A showcase of my technical skills and proficiencies developed through education,
             projects, and professional experiences.
           </p>
         </motion.div>
 
-        {/* Category selector */}
-        <div className="flex justify-center mb-16">
-          <div className="inline-flex p-1.5 bg-white rounded-2xl shadow-lg">
+        {/* Category selector - improved for mobile */}
+        <div className="flex justify-center mb-10 md:mb-16 overflow-x-auto pb-2 px-2">
+          <div className="inline-flex p-1 md:p-1.5 bg-white rounded-xl md:rounded-2xl shadow-lg">
             {categories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
-                className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center space-x-2 ${
+                className={`px-3 md:px-6 py-2 md:py-3 rounded-lg md:rounded-xl font-medium transition-all duration-300 flex items-center space-x-1 md:space-x-2 text-sm md:text-base whitespace-nowrap ${
                   activeCategory === category.id
                     ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-md'
                     : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'
                 }`}
               >
-                <span className="text-xl">{category.icon}</span>
+                <span className="text-lg md:text-xl">{category.icon}</span>
                 <span>{category.name}</span>
               </button>
             ))}
@@ -123,7 +123,7 @@ const Skills = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
             >
               {skillsData[activeCategory as keyof typeof skillsData].map((skill, index) => (
                 <motion.div
@@ -134,7 +134,7 @@ const Skills = () => {
                   whileHover={{ y: -5, scale: 1.03 }}
                   onHoverStart={() => setHoveredSkill(skill.name)}
                   onHoverEnd={() => setHoveredSkill(null)}
-                  className="relative bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 group"
+                  className="relative bg-white rounded-xl md:rounded-2xl shadow-lg overflow-hidden border border-gray-100 group"
                 >
                   {/* Skill card background */}
                   <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-10 transition-opacity duration-300 z-0"
@@ -142,22 +142,22 @@ const Skills = () => {
                          backgroundImage: `radial-gradient(circle at 30% 30%, ${skill.name === hoveredSkill ? 'rgba(99, 102, 241, 0.3)' : 'rgba(99, 102, 241, 0.1)'}, transparent)`
                        }}></div>
                   
-                  <div className="p-6 relative z-10">
+                  <div className="p-4 md:p-6 relative z-10">
                     {/* Skill header */}
-                    <div className="flex items-center justify-between mb-6">
+                    <div className="flex items-center justify-between mb-4 md:mb-6">
                       <div className="flex items-center">
-                        <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${skill.color} flex items-center justify-center text-white text-2xl shadow-md`}>
+                        <div className={`w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-gradient-to-br ${skill.color} flex items-center justify-center text-white text-xl md:text-2xl shadow-md`}>
                           {skill.icon}
                         </div>
-                        <h3 className="text-xl font-bold ml-4 text-gray-800">{skill.name}</h3>
+                        <h3 className="text-lg md:text-xl font-bold ml-3 md:ml-4 text-gray-800">{skill.name}</h3>
                       </div>
-                      <span className="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">
+                      <span className="text-base md:text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">
                         {skill.level}%
                       </span>
                     </div>
                     
                     {/* Skill progress */}
-                    <div className="w-full h-3 bg-gray-100 rounded-full overflow-hidden">
+                    <div className="w-full h-2 md:h-3 bg-gray-100 rounded-full overflow-hidden">
                       <motion.div
                         className={`h-full rounded-full bg-gradient-to-r ${skill.color}`}
                         initial={{ width: 0 }}
@@ -168,9 +168,9 @@ const Skills = () => {
                     </div>
                     
                     {/* Skill level indicator */}
-                    <div className="mt-4 flex justify-between">
-                      <span className="text-sm text-gray-500">Beginner</span>
-                      <span className="text-sm text-gray-500">Advanced</span>
+                    <div className="mt-3 md:mt-4 flex justify-between">
+                      <span className="text-xs md:text-sm text-gray-500">Beginner</span>
+                      <span className="text-xs md:text-sm text-gray-500">Advanced</span>
                     </div>
                   </div>
                 </motion.div>
@@ -185,10 +185,10 @@ const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
           viewport={{ once: true }}
-          className="mt-16 text-center"
+          className="mt-10 md:mt-16 text-center"
         >
-          <h3 className="text-2xl font-bold mb-6 text-gray-800">Other Skills</h3>
-          <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
+          <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-gray-800">Other Skills</h3>
+          <div className="flex flex-wrap justify-center gap-2 md:gap-3 max-w-3xl mx-auto">
             {['UI/UX Design', 'Responsive Design', 'RESTful APIs', 'GraphQL', 'Agile Methodology', 
               'Problem Solving', 'Team Collaboration', 'Technical Writing', 'CI/CD', 'Testing'].map((skill, index) => (
               <motion.span
@@ -198,7 +198,7 @@ const Skills = () => {
                 transition={{ duration: 0.3, delay: index * 0.05 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.05, y: -2 }}
-                className="px-4 py-2 bg-white rounded-full shadow-sm border border-gray-100 text-gray-700 hover:bg-gradient-to-r hover:from-indigo-500 hover:to-purple-500 hover:text-white transition-all duration-300"
+                className="px-3 py-1.5 md:px-4 md:py-2 bg-white rounded-full shadow-sm border border-gray-100 text-sm md:text-base text-gray-700 hover:bg-gradient-to-r hover:from-indigo-500 hover:to-purple-500 hover:text-white transition-all duration-300"
               >
                 {skill}
               </motion.span>

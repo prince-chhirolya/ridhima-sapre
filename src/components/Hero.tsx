@@ -114,11 +114,11 @@ const Hero = () => {
                 className="block text-2xl md:text-3xl text-gray-700 mt-2"
               >
                 <span className="mr-2">I'm a</span>
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 font-semibold">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 font-semibold whitespace-nowrap">
                   Software Developer
                 </span>
                 <span className="text-gray-700"> & </span>
-                <span className="text-indigo-600 font-medium">ML Enthusiast, Problem Solver, Tech Innovator</span>
+                <span className="text-indigo-600 font-medium whitespace-nowrap">ML Enthusiast, Problem Solver, Tech Innovator</span>
               </motion.span>
             </h1>
             
