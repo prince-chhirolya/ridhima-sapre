@@ -89,10 +89,10 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">
-            Let's Connect
+            Let&apos;s Connect
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            I'm always open to new opportunities, collaborations, and interesting conversations.
+            I&apos;m always open to new opportunities, collaborations, and interesting conversations.
             Feel free to reach out through any of the channels below.
           </p>
         </motion.div>

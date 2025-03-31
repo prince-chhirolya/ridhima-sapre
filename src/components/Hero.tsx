@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useRef } from 'react'
 import Image from 'next/image'
-import { motion, useScroll, useTransform, useMotionValue } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
@@ -10,6 +10,7 @@ const Hero = () => {
   const { scrollYProgress } = useScroll()
   const y = useTransform(scrollYProgress, [0, 1], [0, -50])
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
+  
   
   // Handle mouse movement for parallax effect
   useEffect(() => {
@@ -104,7 +105,7 @@ const Hero = () => {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="block"
               >
-                Hi, I'm <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">Anshu</span>
+                Hi, I&apos;m <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">Anshu</span>
               </motion.span>
               
               <motion.span
@@ -113,7 +114,7 @@ const Hero = () => {
                 transition={{ duration: 0.5, delay: 0.5 }}
                 className="block text-2xl md:text-3xl text-gray-700 mt-2"
               >
-                <span className="mr-2">I'm a</span>
+                <span className="mr-2">I&apos;m a</span>
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 font-semibold whitespace-nowrap">
                   Software Developer
                 </span>
@@ -128,8 +129,8 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 0.7 }}
               className="text-lg text-gray-600 mb-8 max-w-2xl"
             >
-              I'm passionate about creating innovative solutions through code, exploring machine learning, 
-              and building applications that solve real-world problems. Let's turn ideas into reality.
+              I&apos;m passionate about creating innovative solutions through code, exploring machine learning, 
+              and building applications that solve real-world problems. Let&apos;s turn ideas into reality.
             </motion.p>
             
             <motion.div
@@ -144,7 +145,7 @@ const Hero = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span className="relative z-10">Let's Connect</span>
+                <span className="relative z-10">Let&apos;s Connect</span>
                 <motion.span 
                   className="absolute inset-0 bg-white"
                   initial={{ x: "-100%", opacity: 0.3 }}
