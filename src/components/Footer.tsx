@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
+import CreditTag from './CreditTag'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -22,6 +23,7 @@ const Footer = () => {
 
   return (
     <footer className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-indigo-950 to-black text-white py-10">
+      
       {/* Animated background elements - reduced number */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 left-0 w-full h-full">
@@ -83,7 +85,7 @@ const Footer = () => {
             className="mb-6 md:mb-0"
           >
             <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-400">
-              Shivani
+              Anshu
             </h2>
             <p className="text-indigo-200 mt-1 max-w-md text-sm">
               Building the future through code and innovation
@@ -219,13 +221,12 @@ const Footer = () => {
             className="pt-6 text-center"
           >
             <p className="text-indigo-300 text-xs">
-              &copy; {currentYear} <span className="text-white">Shivani</span>. All rights reserved.
-            </p>
-            <p className="mt-1 text-xs text-indigo-400">
-              Designed with <span className="text-pink-500">❤️</span> using Next.js & Tailwind CSS
+              &copy; {currentYear} <span className="text-white">Anshu</span>. All rights reserved.
             </p>
           </motion.div>
         </div>
+        {/* Credit Tag - Added at the top of footer */}
+      <CreditTag />
       </div>
     </footer>
   )

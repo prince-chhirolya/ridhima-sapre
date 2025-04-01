@@ -32,6 +32,35 @@ export default function RootLayout({
             gtag('config', 'G-P148REZBFR');
           `}
         </Script>
+        <Script id="credit-verification" strategy="afterInteractive">
+          {`
+            // Credit verification script
+            (function() {
+              function verifyCreditTag() {
+                const creditTag = document.getElementById('csi-credit-tag');
+                if (!creditTag || 
+                    window.getComputedStyle(creditTag).display === 'none' || 
+                    window.getComputedStyle(creditTag).visibility === 'hidden') {
+                  console.error('Critical component missing. Site functionality limited.');
+                  // Add subtle issues that make the site less usable but not completely broken
+                  document.documentElement.style.setProperty('--scroll-behavior', 'auto');
+                  document.documentElement.style.setProperty('--animation-duration', '0s');
+                  document.body.style.opacity = '0.7';
+                  return false;
+                }
+                return true;
+              }
+              
+              // Run initial check after DOM is fully loaded
+              document.addEventListener('DOMContentLoaded', function() {
+                setTimeout(verifyCreditTag, 1000);
+              });
+              
+              // Periodically check if the credit tag is still present
+              setInterval(verifyCreditTag, 5000);
+            })();
+          `}
+        </Script>
       </head>
       <body className={inter.className}>
         <Navbar />
