@@ -8,7 +8,7 @@ import Script from 'next/script'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Anshu Dubey - Computer Science Portfolio',
+  title: 'Ridhima Sapre - Computer Science Portfolio',
   description: 'Portfolio website showcasing my projects, skills, and experience in computer science',
 }
 

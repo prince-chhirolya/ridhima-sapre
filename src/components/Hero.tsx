@@ -167,7 +167,7 @@ const Hero = () => {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="block"
               >
-                Hi, I&apos;m <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">Anshu</span>
+                Hi, I&apos;m <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">Ridhima</span>
               </motion.span>
               
               <motion.span
@@ -328,7 +328,7 @@ const Hero = () => {
                 {/* Replace with your actual image */}
                 <Image
                   src="/profile.jpg"
-                  alt="Anshu"
+                  alt="Ridhima"
                   fill
                   className="object-cover"
                   priority

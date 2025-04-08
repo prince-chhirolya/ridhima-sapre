@@ -85,7 +85,7 @@ const Footer = () => {
             className="mb-6 md:mb-0"
           >
             <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-400">
-              Anshu
+              Ridhima
             </h2>
             <p className="text-indigo-200 mt-1 max-w-md text-sm">
               Building the future through code and innovation
@@ -221,7 +221,7 @@ const Footer = () => {
             className="pt-6 text-center"
           >
             <p className="text-indigo-300 text-xs">
-              &copy; {currentYear} <span className="text-white">Anshu</span>. All rights reserved.
+              &copy; {currentYear} <span className="text-white">Ridhima</span>. All rights reserved.
             </p>
           </motion.div>
         </div>
