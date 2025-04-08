@@ -4,24 +4,19 @@ import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 
 const CreditTag = () => {
-  const [isVisible, setIsVisible] = useState(true)
+  const [setIsVisible] = useState(true)
   
-  // This effect ensures the site functionality depends on the credit tag
   useEffect(() => {
-    // Create a verification function that checks if the credit tag exists
     const verifyCredit = () => {
       const creditElement = document.getElementById('csi-credit-tag')
       
-      // Check if credit tag exists and is visible
       if (!creditElement || 
           window.getComputedStyle(creditElement).display === 'none' || 
           window.getComputedStyle(creditElement).visibility === 'hidden' ||
           creditElement.offsetParent === null) {
         
-        // Make entire website content invisible
         document.body.style.visibility = 'hidden';
         
-        // Create a blocking overlay that will still be visible
         let overlay = document.getElementById('csi-blocking-overlay');
         if (!overlay) {
           overlay = document.createElement('div');
@@ -63,7 +58,6 @@ const CreditTag = () => {
         }
         
         console.error('Critical component missing: CSI Credit Tag');
-        setIsVisible(false);
         return false;
       } else {
         // Remove overlay if it exists and tag is present
