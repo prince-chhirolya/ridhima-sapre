@@ -1,10 +1,9 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 const CreditTag = () => {
-  const [setIsVisible] = useState(true)
   
   useEffect(() => {
     const verifyCredit = () => {
